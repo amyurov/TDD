@@ -13,7 +13,7 @@ public class CreditCalculatorTest {
    static final Double EXPECTED_OVERPAYMENT = 101232.0;
 
 
-    CreditCalculator creditCalculator = null;
+    CreditCalculator creditCalculator = new CreditCalculatorImpl(RATE, TOTAL_MONTH, CREDIT_AMOUNT);
 
     @Test
     @DisplayName("Тест рассчета полной суммы выплаты")
