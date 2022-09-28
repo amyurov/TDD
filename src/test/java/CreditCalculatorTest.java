@@ -18,7 +18,7 @@ public class CreditCalculatorTest {
     @Test
     @DisplayName("Тест рассчета полной суммы выплаты")
     public void totalSummTest() {
-        Double actualTotal = creditCalculator.totalAmount(RATE, TOTAL_MONTH, CREDIT_AMOUNT);
+        Double actualTotal = creditCalculator.totalAmount();
         Double expectedTotal = 351232.0;
 
         Assert.assertEquals(expectedTotal, actualTotal);
@@ -28,7 +28,7 @@ public class CreditCalculatorTest {
     @DisplayName("Тест расчета ежемесячного платежа")
     public void perMonthTest() {
 
-        Double actualMonthlyPayment = creditCalculator.perMonth(EXPECTED_TOTAL, TOTAL_MONTH);
+        Double actualMonthlyPayment = creditCalculator.perMonth(EXPECTED_TOTAL);
 
         Assert.assertNotNull(actualMonthlyPayment);
         Assert.assertEquals(EXPECTED_MONTHLY_PAYMENT, actualMonthlyPayment);
@@ -38,7 +38,7 @@ public class CreditCalculatorTest {
     @DisplayName("Тест рассчета суммы переплаты")
     public void overpaymentTest() {
 
-        Double actualOverpayment = creditCalculator.overpayment(EXPECTED_TOTAL, CREDIT_AMOUNT);
+        Double actualOverpayment = creditCalculator.overpayment(EXPECTED_TOTAL);
 
         Assert.assertEquals(EXPECTED_OVERPAYMENT, actualOverpayment);
     }
